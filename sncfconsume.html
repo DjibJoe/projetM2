@@ -1,88 +1,92 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="myAPP">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
-	
-	<title> DYNAMIC CONTENTS</title>
+	<!DOCTYPE html>
+	<html lang="en" >
+	<head>
+		<meta charset="utf-8">
+		
+		
+		<title> DYNAMIC CONTENTS</title>
 
-	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
-	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen" >
-	<link rel="stylesheet" href="assets/css/main.css">
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
-</head>
+	</head>
 
-<body class="home"  >
+	<body class="home" ng-app="myAPP"  >
 
-	<div class="container">
-		<div class="row">
-			<div class="col-md-4">
-				<table ng-controller="sncfCtrl" class="table table-striped " >
-					<thead>
-						<tr>
-							<th> </th>
-							<th>Train</th>
-							<th >Destination</th>
-							<th >heure</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr ng-repeat = "t in dep_trips">
-							<td><img src="sncf.PNG"></td>
-							<td><div>{{t.mode_commerciale}} {{t.numero_train}}</div></td>
-							<td>{{t.destination}}</td>
-							<td>{{t.heur_depart}}</td>
-						</tr>
-					</tbody>
+		<div class="container"  >
+			<div class="row">
+				<div class="col-md-4">
+					<span></span>
+				</div>
+				<div class="col-md-4">
+					<h1>prochain departs</h1>		
+					<table ng-controller="SncfDeparturesCtrl" class="table table-striped " >
+						<thead>
+							<tr>
+								<th> </th>
+								<th>Train</th>
+								<th >Destination</th>
+								<th >heure</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat = "t in dep_trips">
+								<td><img src="sncf.PNG"></td>
+								<td><div>{{t.mode_commerciale}} {{t.numero_train}}</div></td>
+								<td>{{t.destination}}</td>
+								<td>{{t.heur_depart}}</td>
+							</tr>
+						</tbody>
 
-				</table>
+					</table>
+				</div>
+
+				<div class="col-md-4">
+					<span></span>
+				</div>
 			</div>
-			<div class="col-md-4">
-				 <span></span>
-			</div>
 
-			<div class="col-md-4">
-				<table class="table table-striped table-advance table-hover table-bordered" ng-controller ="aqiCtrl">
-					<thead>
-						<tr>
-							<th> </th>
-							<th>Train</th>
-							<th >Destination</th>
-							<th >heure</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr ng-repeat = "t in arr_trips">
-							<td><img src="sncf.PNG"></td>
-							<td><div>{{t.mode_commerciale}} {{t.numero_train}}</div></td>
-							<td>{{t.destination}}</td>
-							<td>{{t.heur_depart}}</td>
-						</tr>
-					</tbody>
-				</table>
+			<div class="row">
+				<div class="col-md-4">
+					<span></span>
+				</div>
+				<div class="col-md-4">
+					<h1>Prochains Arrivées</h1>
+					<table class="table table-striped " ng-controller ="SncfArrivalesCtrl">
+						<thead>
+							<tr>
+								<th> </th>
+								<th>Train</th>
+								<th >Destination</th>
+								<th >heure</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat = "t in arr_trips">
+								<td><img src="sncf.PNG"></td>
+								<td><div>{{t.mode_commerciale}} {{t.numero_train}}</div></td>
+								<td>{{t.destination}}</td>
+								<td>{{t.provenance}}</td>
+								<td>{{t.heur_arrivee}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 
+				<div class="col-md-4">
+					<span></span>
+				</div>
 			</div>
 		</div>
-	</div>
 
-	
+		
 
-	
+		<div id="map" ng-controller ="mapCtrl"></div>
 
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-	<script src="assets/js/headroom.min.js"></script>
-	<script src="assets/js/jQuery.headroom.min.js"></script>
-	<script src="assets/js/angular-1.5.6/angular.min.js"></script>		
-	<script type="text/javascript" src="assets/js/src.js"></script>
-	<script type="text/javascript" src="assets/js/ui-bootstrap-tpls-2.5.0.min.js"></script>
-	<script src="assets/js/dirPagination.js"></script>
-	<script src="assets/js/route.js"></script>
+		
+		
+		<script src="assets/js/angular-1.5.6/angular.min.js"></script>		
+		<script type="text/javascript" src="assets/js/src.js"></script>		
 
-</body>
-</html>
+	</body>
+	</html>

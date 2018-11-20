@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="aqiAPP">
+<head>
+<meta charset="utf-8">
+
+
+<title> DYNAMIC CONTENTS</title>
+
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+
+</head>
+
+<body class="home" ng-controller="aqiCtrl" >
+
+	<div class="container" >
+		<div class="row" >
+			<div class="col-md-4"><span></span></div>
+			<div class="col-md-4">
+				<div >
+					<p>
+					  <button type="button" class="btn btn-primary">Hier</button>
+					  <button type="button" class="btn btn-primary">Aujourd'hui</button>
+  					  <button type="button" class="btn btn-primary">Demain</button>
+					</p>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<span> 
+					{{feature.valeur}} Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</span>
+			</div>
+
+		</div>
+		<div class="row" >
+					<div class="col-md-4"><span>{{feature.valeur}}</span></div>
+					<div class="col-md-4"><p></p></div>
+					<div class="col-md-4"><span></span></div>
+		</div>
+
+				
+	</div>
+			
+
+	<script src="assets/js/angular-1.5.6/angular.min.js"></script>		
+	<script type="text/javascript" src="assets/js/aqi.js"></script>		
+
+</body>
+</html>
