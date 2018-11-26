@@ -42,6 +42,7 @@ myAPP.controller('sncfCtrl',function function_name($scope,$http) {
 				var destination = donnees.arrivals[i].display_informations.direction
 				trajets.destination= (destination).slice(0,destination.indexOf("("))
 				$scope.arr_trips.push(trajets)
+				
 
 				console.log(trajets)
 				trajets = {}
